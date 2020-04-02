@@ -1,0 +1,53 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.done {
+  border: 1px solid #ff69b4;
+  color: #ff69b4;
+  padding: 2px 0;
+  border-radius: 3px;
+  width: 70px;
+  background-color: #fff;
+}
+
+.task {
+  flex: 8;
+  padding-left: 1rem;
+}
+
+.delete {
+  background-color: #fff;
+  border: none;
+  flex: 1;
+}
+
+.delete:hover {
+  color: #f00;
+}
+
+input {
+  width: 100%;
+  border: 1px #bbb solid;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px 0;
+}
+
+input[type="text"]::placeholder {
+  color: #bbb;
+}
+
+.add {
+  background-color: #ff1493;
+  color: #fff;
+  width: 100%;
+  border: none;
+  padding: 5px;
+}

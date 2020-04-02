@@ -26,7 +26,7 @@ export class TodosComponent implements OnInit {
     },
     {
       task: 'Try to pet cat',
-      completed: false
+      completed: true
     },
     {
       task: 'Pet Dog',
@@ -37,4 +37,20 @@ export class TodosComponent implements OnInit {
       completed: false
     }
   ];
+
+  addTask = newTaskInput => {
+    let newTask = {
+      task: newTaskInput,
+      completed: false
+    };
+    this.todos.push(newTask);
+  };
+
+  removeTask(removeObject) {
+    this.todos = this.todos.filter(t => t.task !== removeObject.task);
+  }
+
+  completeTask(done) {
+    done.completed = !done.completed;
+  }
 }

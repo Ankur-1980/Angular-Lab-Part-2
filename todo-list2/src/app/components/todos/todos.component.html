@@ -3,18 +3,33 @@
     <h1>TODO List</h1>
     <p>A place to store todos</p>
     <form>
-      <input type="text" name="filter" placeholder="filter your to-dos" />
+      <input
+        class="filter"
+        type="text"
+        name="filter"
+        placeholder="filter your to-dos"
+      />
     </form>
     <ol>
       <li *ngFor="let object of todos">
-        <button *ngIf="!object.completed" class="if-complete">Complete</button>
-        <span>{{ object.task }}</span>
-        <button>X</button>
+        <button
+          (click)="completeTask(object)"
+          *ngIf="!object.completed"
+          class="done"
+        >
+          Complete
+        </button>
+        <span class="task" [ngClass]="{ completed: object.completed }">{{
+          object.task
+        }}</span>
+        <button class="delete" (click)="removeTask(object)">X</button>
       </li>
     </ol>
     <form action="">
-      <input type="text" name="todo" placeholder="" Add Your to-do />
-      <button input="Submit">Add</button>
+      <input #task type="text" name="todo" placeholder="" Add Your to-do />
+      <button class="add" (click)="addTask(task.value); task.value = ''">
+        Add
+      </button>
     </form>
   </section>
 </main>
