@@ -4,6 +4,7 @@
     <p>A place to store todos</p>
     <form>
       <input
+        [(ngModel)]="searchText"
         class="filter"
         type="text"
         name="filter"
@@ -11,7 +12,7 @@
       />
     </form>
     <ol>
-      <li *ngFor="let object of todos">
+      <li *ngFor="let object of todos | filter: searchText">
         <button
           (click)="completeTask(object)"
           *ngIf="!object.completed"

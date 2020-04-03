@@ -8,7 +8,7 @@ import { Todo } from '../../interfaces/todo';
 })
 export class TodosComponent implements OnInit {
   constructor() {}
-
+  searchText;
   ngOnInit(): void {}
 
   todos: Todo[] = [
